@@ -19,38 +19,41 @@ public class Paintings{
     this.value = 400;
   }
 
+  public void Display(){
+    System.out.println("Title: " + title);
+    System.out.println("Artist: " + artist);
+    System.out.println("Value: $" + this.value);
+    System.out.println();
+  }
+
   public static void main(String[] args){
 
-    int value = 0;
+  int value = 0;
 
-    Paintings[] paintings = new Paintings[10];
+  Paintings [] paintings = new Paintings[10];
 
-    Scanner sc = new Scanner(System.in);
+  Scanner sc = new Scanner(System.in);
 
-    for(int i = 0; i < 10; i++){
+  for(int i = 0; i < 10; i++){
 
-      System.out.print("Enter the title of the painting: ");
-      String title = sc.nextLine();
+    System.out.print("Enter the title of the painting: ");
+    String title = sc.nextLine();
 
-      System.out.print("Enter the artist of the painting: ");
-      String artist = sc.nextLine();
+    System.out.print("Enter the artist of the painting: ");
+    String artist = sc.nextLine();
 
-      //if(artist.equals("Degas") || artist.equals("Monet") || artist.equals("Picasso") || artist.equals("Rembrandt")){
-
-      if(value == 25000){
-        FamousPainting paintfam = new FamousPainting(title,artist);
-        paintings[i] = paintfam;
-      }
-      else{
-        Paintings paint = new Paintings(title,artist);
-        paintings[i] = paint;
-      }
-
-    System.out.println(paintings);
+    if(artist.equals("Degas") || artist.equals("Monet") || artist.equals("Picasso") || artist.equals("Rembrandt")){
+      FamousPainting paintfam = new FamousPainting(title,artist);
+      paintings[i] = paintfam;
+    }
+    else{
+      Paintings paint = new Paintings(title,artist);
+      paintings[i] = paint;
     }
   }
-}
 
-public void Display(){
-
+  for(int i = 0; i < 10; i++){
+    paintings[i].Display();
+  }
+  }
 }

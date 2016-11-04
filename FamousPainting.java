@@ -1,12 +1,23 @@
+//Susanna Pritchett
+
 public class FamousPainting extends Paintings{
   int value;
 
-  public FamousPainting(String artist, String title){
-    if(artist.equals("Degas") || artist.equals("Monet") || artist.equals("Picasso") || artist.equals("Rembrandt")){
-      value = 25000;
-    }
-    else{
-      value = 400;
-    }
+  public FamousPainting(){
+    value = 0;
+  }
+
+  public FamousPainting(String title, String artist){
+    this.artist = artist;
+    this.title = title;
+    this.value = 25000;
+  }
+
+  public void Display(){
+
+    System.out.println("Title: " + title);
+    System.out.println("Artist: " + artist);
+    System.out.println("Value: $" + this.value);
+    System.out.println();
   }
 }
